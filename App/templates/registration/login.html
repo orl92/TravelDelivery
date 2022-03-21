@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    {% load static %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'App/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'App/css/sign-in.css' %}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+<main class="form-signin">
+
+    <div class="container">
+        <div calss="card">
+            <div class="card-body">
+
+                <form action="" method="post">
+                    {% csrf_token %}
+
+
+                    <img class="mb-4" src="{% static 'App/svg/person-circle.svg' %}" alt="" width="72" height="57">
+                    <h1 class="h3 mb-3 fw-normal" style="color: wheat;">Iniciar Sesión en Travel Delivery</h1>
+
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="username" autofocus autocapitalize="none"
+                               autocomplete="username" maxlength="150" required id="id_username">
+                        <label for="id_username">Nombre de usuario</label>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" name="password" autocomplete="current-password"
+                               required
+                               id="id_password">
+                        <label for="id_password">Contraseña</label>
+
+                    </div>
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Recuerdame
+                        </label>
+                    </div>
+
+                    <button class="w-100 btn btn-success btn-lg" type="submit">Iniciar Sesión</button>
+                    <hr>
+                    <a href="{% url 'home' %}" class="btn btn-outline-light btn-sm" role="button">ir al home</a>
+                    <a href="{% url 'registro' %}" class="btn btn-outline-light btn-sm" role="button">registrarse</a>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</main>
+</body>
+</html>

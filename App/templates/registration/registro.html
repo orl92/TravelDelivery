@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'App/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+
+
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'App/css/form-validation.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="text-center">
+{% load crispy_forms_tags %}
+<main class="form">
+  
+    <div class="container">
+
+      <h1 class="h3 mb-3 fw-normal" style="color: wheat;">Registrarse en Travel Delivery</h1>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    {{ form | crispy}}
+
+                    <input class="btn btn-secondary btn-lg" type="reset" value="Limpiar">
+                    <input class="btn btn-success btn-lg" type="submit" value="Registrarse">
+                    <hr>
+                    <a href="{% url 'home' %}" class="btn btn-outline-light btn-sm" role="button">ir al home</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm" role="button">iniciar sesión</a>
+
+
+                </form>
+
+            
+    </div>
+</main>
+<script src="{% static 'App/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'App/js/form-validation.js' %}"></script>
+</body>
+
+</html>
