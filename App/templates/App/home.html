@@ -1,46 +1,172 @@
-
 {% extends "App/base.html" %}
 
 {% load static %}
 
 {% block content %}
-
-   <!-- Heading -->
-   <section class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'App/img/principal.jpg' %}" alt="">
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4" >
-            <span class="section-heading-upper">Puntualidad</span>
-            <span class="section-heading-lower">El mejor stock</span>
-          </h2>
-          <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
-          </p>
-         
-        </div>
-      </div>
+<br>
+<!-- Carousel -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-  </section>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#777"/>
+            </svg>
 
-
-  
-    <!-- Message -->
-    <section class="page-section cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Compromiso total</span>
-                <span class="section-heading-lower">Garantizado</span>
-              </h2>
-              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Registrate en Travel Delivery.</h1>
+                    <p>Registrate en Travel Delivery par para obtener los benefisios de la pataforma.</p>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'registro' %}">Registrarse</a></p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#777"/>
+            </svg>
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Srvisios de Calidad.</h1>
+                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'servicios' %}">Ver Servisios</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#777"/>
+            </svg>
+
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>La Mejor Tienda.</h1>
+                    <p>Encontraras casi culaquier producto que deses comprar.</p>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'tienda' %}">Ir a la Tienda</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- termina Carousel -->
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">Nuevo Producto Añadido a la Tienda.<span class="text-muted">Compralo ya.</span>
+        </h2>
+        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
+            here.</p>
+    </div>
+    <div class="col-md-5">
+        <div class="card" style="width: 100%; margin: 10px 10px;">
+
+            <img src="{{ nuevo_producto.imagen.url }}" class="card-img-top">
+
+            <div class="card-body" style="text-align: center;">
+
+                <h7 class="card-title">{{ nuevo_producto.nombre }}</h7>
+                <p class="card-text">{{ nuevo_producto.precio }} USD</p>
+            </div>
+            <div  class="card-footer text-center">
+                <a href="#" class="btn btn-success">Agregar al carro</a>
+            </div>
+         </div>
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Lo Mas Vendido. <span class="text-muted">Ver por ti mismo.</span></h2>
+        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this
+            layout would work with some actual real-world content in place.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <div class="card" style="width: 100%; margin: 10px 10px;">
+
+            <img src="{{ mas_vendido.imagen.url }}" class="card-img-top">
+
+            <div class="card-body" style="text-align: center;">
+
+                <h7 class="card-title">{{ mas_vendido.nombre }}</h7>
+                <p class="card-text">{{ mas_vendido.precio }} USD</p>
+            </div>
+            <div  class="card-footer text-center">
+                <a href="#" class="btn btn-success">Agregar al carro</a>
+            </div>
+         </div>
+
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">Ultima Entrada del Blog. <span class="text-muted">Ver Ahora.</span></h2>
+        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really
+            intended to be actually read, simply here to give you a better view of what this would look like with some
+            actual content. Your content.</p>
+    </div>
+    <div class="col-md-5">
+        <div class="card" style="width: 100%; margin: 10px 10px;">
+
+            <img src="{{ ultimo_bog.imagen.url }}" class="card-img-top">
+
+            <div class="card-body" style="text-align: center;">
+
+                <h7 class="card-title">{{ ultimo_bog.titulo }}</h7>
+                <p class="card-text">{{ ultimo_bog.contenido }}</p>
+            </div>
+         </div>
+
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES -->
+
+<!-- Message -->
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Compromiso total</span>
+                        <span class="section-heading-lower">Garantizado</span>
+                    </h2>
+                    <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos
+                        tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de
+                        su casa con puntualidad y profesionalidad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {% endblock %}
